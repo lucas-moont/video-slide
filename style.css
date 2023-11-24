@@ -1,68 +1,73 @@
+*{
+    box-sizing: border-box;
+}
+
 .customVideoCarousel {
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-    width: calc(100% - 148px); /* Largura da tela - 74px para cada lado */
-  }
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.customVideoCarouselInner {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Transição suave apenas para o 'transform' */
+  overflow-x: visible; /* Adição de barra de rolagem horizontal */
+  scroll-snap-type: x mandatory; /* Garantir que cada vídeo apareça por vez */
+  width: 100%; /* Ajuste na largura */
   
-  .customVideoCarouselInner {
-    display: flex;
-    gap: 20px; /* Espaçamento entre os vídeos */
-    transition: transform 0.5s ease-in-out; /* Transição suave */
-    overflow-x: auto; /* Adição de barra de rolagem horizontal */
-    scroll-snap-type: x mandatory; /* Garantir que cada vídeo apareça por vez */
-    width: 100%; /* Ajuste na largura */
-  }
-  
-  .customVideoCarouselItem {
-    flex: 0 0 auto;
-    width: calc(100% - 20px); /* Ajuste na largura */
-    max-width: 400px; /* Largura máxima dos vídeos */
-    scroll-snap-align: start; /* Alinhar cada vídeo à esquerda */
-    display: flex; /* Centralizar vídeos horizontalmente */
-    justify-content: center; /* Centralizar vídeos horizontalmente */
-  }
-  
-  .customVideoContainer {
-    position: relative;
-    width: 100%;
-    padding-bottom: 177.77%; /* Proporção 9:16 */
-    overflow: hidden;
-  }
-  
-  .customVideoContainer iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .customPrevSlide,
-  .customNextSlide {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-  }
-  
-  .customPrevSlide {
-    left: 10px;
-  }
-  
-  .customNextSlide {
-    right: 10px;
-  }
-  
-  .customPrevSlide:hover,
-  .customNextSlide:hover {
-    opacity: 0.7;
-  }
-  
+}
+
+.customVideoCarouselItem {
+  flex: 0 0 auto;
+  width: 100%; /* Largura de cada item do carrossel */
+  max-width: 400px; /* Largura máxima dos vídeos */
+  scroll-snap-align: start; /* Alinhar cada vídeo à esquerda */
+  display: flex; /* Centralizar vídeos horizontalmente */
+  justify-content: center; /* Centralizar vídeos horizontalmente */
+  padding: 0 75px;
+  margin: 0 auto;
+}
+
+.customVideoContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 177.77%; /* Proporção 9:16 */
+  overflow: hidden;
+}
+
+.customVideoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.customPrevSlide,
+.customNextSlide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.customPrevSlide {
+  left: 10px;
+}
+
+.customNextSlide {
+  right: 10px;
+}
+
+.customPrevSlide:hover,
+.customNextSlide:hover {
+  opacity: 0.7;
+}
