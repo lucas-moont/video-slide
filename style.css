@@ -52,11 +52,12 @@
   width: 40px;
   height: 40px;
   font-size: 24px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #7E9E08;
   color: white;
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  border-radius: 50%;
 }
 
 .customPrevSlide {
